@@ -70,7 +70,7 @@ sub BUILDARGS {
    my $class  = shift;
    my $params = $class->SUPER::BUILDARGS(@_);
 
-   $params->{'gitdir'} ||= dir($params->{'directory'}, '.git');
+   $params->{'gitdir'} ||= dir($params->{'directory'} ||(), '.git');
    return $params;
 }
 
